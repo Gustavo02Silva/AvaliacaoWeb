@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>VirtualChat - Login</title>
+{% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
+        <h2 class="card-title text-center mb-4">Login</h2>
+        {% if erros %}
+            <div class="alert alert-danger" role="alert">
+                <ul class="mb-0">
+                {% for erro in erros %}
+                    <li>{{ erro }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        <form method="POST">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">E-mail</label>
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Senha</label>
+                <input type="password" name="password" class="form-control" id="exampleInputPassword1" required>
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Lembrar-me</label>
+            </div>
+            <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-primary">Entrar</button>
+            </div>
+            <div class="text-center">
+                <span>Não tem uma conta?</span>
+                <a href="{{ url_for('signup') }}">Cadastre-se aqui.</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,166 @@
+.container {
+    position: relative;
+}
+
+.form-centralizado {
+    margin-top: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+    display: grid;
+    align-items: center;
+}
+
+.titulo-pagina {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.comando {
+    display: flex;
+    justify-content: space-between;
+}
+
+:root {
+  --roxo-principal: #6f42c1;
+  --roxo-escuro: #4b286d;
+  --verde-principal: #00d084;
+  --verde-escuro: #009e60;
+  --cinza-fundo: #f8f9fa;
+  --cinza-card: #f3f0fa;
+}
+
+body {
+  background: linear-gradient(120deg, var(--roxo-principal) 0%, var(--verde-principal) 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+.navbar {
+  background: var(--roxo-principal) !important;
+  box-shadow: 0 2px 8px rgba(111,66,193,0.12);
+}
+
+.navbar-brand, .navbar-nav .nav-link, .navbar-nav .nav-link.active {
+  color: #fff !important;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--verde-principal) !important;
+  text-shadow: 0 0 8px #fff3;
+}
+
+.card {
+  background: var(--cinza-card);
+  border: none;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(111,66,193,0.07);
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 36px rgba(111,66,193,0.15);
+}
+
+.btn-outline-success, .btn-outline-success:focus {
+  border-color: var(--verde-principal);
+  color: var(--verde-principal);
+  background: transparent;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-outline-success:hover, .btn-outline-success:active {
+  background: var(--verde-principal);
+  color: #fff;
+}
+
+.btn-outline-dark {
+  border-color: var(--roxo-principal);
+  color: var(--roxo-principal);
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-outline-dark:hover, .btn-outline-dark:active {
+  background: var(--roxo-principal);
+  color: #fff;
+}
+
+.btn-outline-danger {
+  border-color: #dc3545;
+  color: #dc3545;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-outline-danger:hover, .btn-outline-danger:active {
+  background: #dc3545;
+  color: #fff;
+}
+
+.contato {
+  border-radius: 8px;
+  padding: 8px 12px;
+  transition: background 0.15s;
+}
+
+.contato:hover {
+  background: linear-gradient(90deg, var(--roxo-principal) 0%, var(--verde-principal) 100%);
+  color: #fff;
+}
+
+.contato:hover span, .contato:hover .btn, .contato:hover i {
+  color: #fff !important;
+}
+
+.icons i {
+  font-size: 1.1rem;
+  color: var(--roxo-principal);
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.icons i:hover {
+  color: var(--verde-principal);
+  transform: scale(1.2);
+}
+
+.foto {
+  background: linear-gradient(120deg, var(--roxo-principal) 60%, var(--verde-principal) 100%);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 2.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.form-group label {
+  color: var(--roxo-principal);
+  font-weight: 500;
+}
+
+.form-control:focus {
+  border-color: var(--verde-principal);
+  box-shadow: 0 0 0 0.2rem rgba(0,208,132,0.15);
+}
+
+.mensagem {
+  background: #fff;
+  border-left: 4px solid var(--roxo-principal);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(111,66,193,0.07);
+}
+
+.mensagem h5 {
+  color: var(--roxo-escuro);
+  margin-bottom: 6px;
+}
+
+hr {
+  border-top: 1.5px solid var(--verde-principal);
+  margin: 20px 0;
+}

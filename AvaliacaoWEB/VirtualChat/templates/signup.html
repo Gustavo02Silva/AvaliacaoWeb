@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>VirtualChat - Signup</title>
+{% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
+        <h2 class="card-title text-center mb-4">Criar Conta</h2>
+        {% if erros %}
+            <div class="alert alert-danger" role="alert">
+                <ul class="mb-0">
+                {% for erro in erros %}
+                    <li>{{ erro }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        <form method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nome</label>
+                <input type="text" class="form-control" name="name" value="{{ name }}" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">E-mail</label>
+                <input type="email" class="form-control" name="email" value="{{ email }}" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+            </div>
+            <div class="mb-3">
+                <label for="password1" class="form-label">Senha</label>
+                <input type="password" class="form-control" name="password1" id="password1" required>
+            </div>
+            <div class="mb-3">
+                <label for="password2" class="form-label">Confirme a Senha</label>
+                <input type="password" class="form-control" name="password2" id="password2" required>
+            </div>
+            <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </div>
+            <div class="text-center">
+                <span>Já tem uma conta?</span>
+                <a href="{{ url_for('login') }}">Faça o login aqui.</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

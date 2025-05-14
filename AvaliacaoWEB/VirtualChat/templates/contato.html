@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>VirtualChat - Novo Contato</title>
+{% endblock %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="card p-4" style="min-width: 350px; max-width: 420px; width: 100%;">
+        <h2 class="mb-4 text-center" style="color: var(--roxo-principal); font-weight: 700;">Novo Contato</h2>
+        
+        {% if erros %}
+            <div class="alert alert-danger">
+                <ul class="mb-0">
+                    {% for erro in erros %}
+                        <li>{{ erro }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        <form method="POST" autocomplete="off">
+            <div class="form-group">
+                <label for="nomeContato">Nome do Contato</label>
+                <input type="text" name="nomeContato" class="form-control" id="nomeContato"
+                       style="border-left: 4px solid var(--roxo-principal);" required
+                       value="{{ name if name is defined else '' }}">
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" name="email" id="email"
+                       style="border-left: 4px solid var(--verde-principal);" required
+                       value="{{ email if email is defined else '' }}">
+            </div>
+            <div class="form-group">
+                <label for="celular">Celular</label>
+                <input type="text" name="celular" class="form-control" id="celular"
+                       style="border-left: 4px solid var(--roxo-principal);" required
+                       value="{{ celular if celular is defined else '' }}">
+            </div>
+            <div class="d-flex justify-content-between mt-4">
+                <a href="{{ url_for('home') }}" class="btn btn-outline-dark">
+                    <i class="bi bi-arrow-left"></i> Voltar
+                </a>
+                <button type="submit" class="btn btn-outline-success">
+                    <i class="bi bi-person-plus"></i> Salvar Contato
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
